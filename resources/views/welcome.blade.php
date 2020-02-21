@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">        
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
         <style>
             html, body {
                 background-color: #5e2129 ;
@@ -61,6 +64,9 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .bg-color {
+                color: black
+            }
         </style>
     </head>
     <body>
@@ -70,10 +76,10 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="#" data-toggle="modal" data-target="#login">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="#" data-toggle="modal" data-target="#registro">Registro</a>
                         @endif
                     @endauth
                 </div>
@@ -85,7 +91,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laravel.com/docs"></a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
@@ -93,8 +99,16 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </div>                
             </div>
         </div>
+
+  <!-- Modal -->
+
+    @include('auth.login')
+    @include('auth.register')
+    
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     </body>
 </html>
