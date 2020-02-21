@@ -1,0 +1,13 @@
+body {
+    background: grey;
+}
+
+.card-new {
+    border-radius: 0px 0px 25px 25px;
+}
+
+.vino {
+    background: #5e2129 ;
+    color: white;
+}
+
