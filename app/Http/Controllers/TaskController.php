@@ -9,7 +9,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return Task::all();
+        return Task::where('user_id', auth()->user()->id)->get();
     }
    
     public function store(Request $request)
